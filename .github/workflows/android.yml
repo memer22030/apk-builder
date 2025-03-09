@@ -18,11 +18,10 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get update
-          sudo add-apt-repository universe  # Enable the universe repository
-          sudo apt-get update
-          sudo apt-get install python3-distutils python3-dev build-essential  # Install necessary packages
+          sudo apt-get install python3-dev build-essential python3-pip  # Ensure pip is installed
           python -m pip install --upgrade pip
-          pip install buildozer
+          pip install setuptools wheel  # Install setuptools and wheel for distutils-like functionality
+          pip install buildozer  # Install Buildozer
       - name: Debug information
         run: |
           echo "Python version: $(python --version)"
