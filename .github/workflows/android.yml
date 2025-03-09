@@ -18,7 +18,7 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install python3-distutils  # Install distutils
+          sudo apt-get install python3-dev build-essential  # Install necessary packages for building
           python -m pip install --upgrade pip
           pip install buildozer
       - name: Debug information
